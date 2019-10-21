@@ -4,7 +4,7 @@ require_relative '../helper/altool_helper'
 module Fastlane
   module Actions
     class AltoolAction < Action
-      ALTOOL= File.expand_path('/Applications/Xcode.app/Contents/Applications/Application\ Loader.app/Contents/Frameworks/ITunesSoftwareService.framework/Support/altool')
+      ALTOOL= "xcrun altool"
       puts ALTOOL
       def self.run(params)
         UI.message(" ----altool binary exists on your machine----- ")
