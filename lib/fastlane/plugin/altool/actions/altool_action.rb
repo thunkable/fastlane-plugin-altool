@@ -5,6 +5,10 @@ module Fastlane
   module Actions
     class AltoolAction < Action
       ALTOOL= "xcrun altool"
+      PATH = "/Applications/Xcode.app/Contents/Applications/Application\ Loader.app/Contents/Frameworks/ITunesSoftwareService.framework/Support/altool"
+      if File.exist?(PATH)
+        ALTOOL= File.expand_path(PATH)
+      end
       puts ALTOOL
       def self.run(params)
         UI.message(" ----altool binary exists on your machine----- ")
